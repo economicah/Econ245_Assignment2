@@ -10,4 +10,8 @@ airbnb<- airbnb %>% rename(neighborhood = neighbourhood)
 neighborhoods <- as_tibble(airbnb %>% count(neighborhood))
 
 #2b
-neighborhoods <- neighborhoods
+neighborhoods <- neighborhoods %>% filter(neighborhood != "NA")
+neighborhoods <- neighborhoods %>% arrange(desc(n))
+neighborhoods <- neighborhoods %>% head(n, n=20)
+
+#2c
