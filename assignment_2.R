@@ -15,3 +15,4 @@ neighborhoods <- neighborhoods %>% arrange(desc(n))
 neighborhoods <- neighborhoods %>% head(n, n=20)
 
 #2c
+airbnb_top_neighborhoods <- airbnb %>% filter(neighborhood %in% neighborhoods$neighborhood)
