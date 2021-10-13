@@ -21,3 +21,4 @@ airbnb_top_neighborhoods <- airbnb %>% filter(neighborhood %in% neighborhoods$ne
 summary_stats_top_neighborhoods <- summarize(airbnb_top_neighborhoods %>% group_by(neighborhood),avg_square_feet = mean(square_feet,na.rm=TRUE),avg_price = mean(price,na.rm=TRUE),sd_price=sd(price,na.rm=TRUE), max_price=max(price,na.rm=TRUE), min_price=min(price,na.rm=TRUE))
 
 #2e
+highest_avg_square_ft <- as.numeric(summary_stats_top_neighborhoods %>%  summarize(max(avg_square_feet,na.rm=TRUE)))
